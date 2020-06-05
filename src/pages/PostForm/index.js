@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import { TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+
 const containerForm = {
     textAlign:'center',
 }
@@ -46,11 +48,10 @@ export default class PostForm extends Component{
  render(){
     return (
     <Container component="main" maxWidth="xs">
-        <div>
-            <form onSubmit={this.cadastrar} style={containerForm}>
-                <span style={{color:'red'}}>{this.state.alerta}</span><br></br>
+        <form onSubmit={this.cadastrar} style={containerForm}>
+            <span style={{color:'red'}}>{this.state.alerta}</span><br></br>
                 <label>Cadastrar encomendas</label><br/>
-                <div style={{margin: 30}}>  
+                    <Box m={4}>  
                         <TextField 
                         type="text" 
                         placeholder="Seu nome" 
@@ -58,8 +59,8 @@ export default class PostForm extends Component{
                         autoFocus 
                         fullWidth
                         onChange={(e)=>this.setState({nome: e.target.value})}/>
-                    </div>
-                <div style={{margin: 30}}>  
+                    </Box>
+                    <Box m={4}>  
                     <TextField 
                     type="date" 
                     placeholder="Data de entrega" 
@@ -67,8 +68,8 @@ export default class PostForm extends Component{
                     autoFocus 
                     fullWidth
                     onChange={(e)=>this.setState({dataEntrega: e.target.value})}/>
-                </div>
-                <div style={{margin: 30}}>  
+                </Box>
+                <Box m={4}>  
                     <TextField 
                     type="text" 
                     placeholder="Ponto de Partida" 
@@ -76,8 +77,8 @@ export default class PostForm extends Component{
                     autoFocus 
                     fullWidth
                     onChange={(e)=>this.setState({pontoPartida: e.target.value})}/>
-                </div>      
-                <div style={{margin: 30}}>  
+                </Box>      
+                <Box m={4}>  
                     <TextField 
                     type="text" 
                     placeholder="Destino" 
@@ -85,10 +86,9 @@ export default class PostForm extends Component{
                     autoFocus 
                     fullWidth
                     onChange={(e)=>this.setState({pontoDestino: e.target.value})}/>
-                </div>     
+                </Box>     
             <Button
              type="submit"
-             fullWidth
              variant="contained"
              color="primary"
              >
@@ -97,7 +97,6 @@ export default class PostForm extends Component{
             
               <Link to  ='/cadastros' style={{ textDecoration: 'none', color: 'white' }} >
                 <Button
-                fullWidth
                 margin="2dp"
                 variant="contained"
                 color="secondary"
@@ -105,8 +104,7 @@ export default class PostForm extends Component{
                  Lista de Cadastros    
                 </Button>
               </Link>
-            </form>
-        </div>
+        </form>
     </Container>
     );
  }
