@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box';
 
 const containerForm = {
     textAlign:'center',
+    backgroundColor: 'white',
 }
 
 export default class PostForm extends Component{
@@ -35,75 +36,73 @@ export default class PostForm extends Component{
           pontoDestino: this.state.pontoDestino
         })
           }).then( response => response.json()).then(data => {
-        if (data === 'success'){
-          alert('enviado com sucesso');
-          console.log('enviado com sucesso');
-          }
-         })
+        if (data){
+            alert('enviado com sucesso');
+             console.log('enviado com sucesso');
+            }
+          })
         }
-        
-    redirecionar(){
-        
-    }    
+           
  render(){
     return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
         <form onSubmit={this.cadastrar} style={containerForm}>
-            <span style={{color:'red'}}>{this.state.alerta}</span><br></br>
-                <label>Cadastrar encomendas</label><br/>
-                    <Box m={4}>  
-                        <TextField 
+          <span style={{color:'red'}}>{this.state.alerta}</span><br></br>
+              <label>Cadastrar encomendas</label><br/>
+                  <Box m={4}>  
+                      <TextField 
                         type="text" 
                         placeholder="Seu nome" 
                         value={this.state.nome} 
                         autoFocus 
                         fullWidth
                         onChange={(e)=>this.setState({nome: e.target.value})}/>
-                    </Box>
-                    <Box m={4}>  
-                    <TextField 
-                    type="date" 
-                    placeholder="Data de entrega" 
-                    value={this.state.dataEntrega} 
-                    autoFocus 
-                    fullWidth
-                    onChange={(e)=>this.setState({dataEntrega: e.target.value})}/>
-                </Box>
-                <Box m={4}>  
-                    <TextField 
-                    type="text" 
-                    placeholder="Ponto de Partida" 
-                    value={this.state.pontoPartida} 
-                    autoFocus 
-                    fullWidth
-                    onChange={(e)=>this.setState({pontoPartida: e.target.value})}/>
-                </Box>      
-                <Box m={4}>  
-                    <TextField 
-                    type="text" 
-                    placeholder="Destino" 
-                    value={this.state.pontoDestino} 
-                    autoFocus 
-                    fullWidth
-                    onChange={(e)=>this.setState({pontoDestino: e.target.value})}/>
-                </Box>     
-            <Button
-             type="submit"
-             variant="contained"
-             color="primary"
-             >
-              CADASTRAR
-            </Button>
-            
-              <Link to  ='/cadastros' style={{ textDecoration: 'none', color: 'white' }} >
-                <Button
-                margin="2dp"
-                variant="contained"
-                color="secondary"
-                >
-                 Lista de Cadastros    
-                </Button>
-              </Link>
+                  </Box>
+                  <Box m={4}>  
+                      <TextField 
+                        type="date" 
+                        placeholder="Data de entrega" 
+                        value={this.state.dataEntrega} 
+                        autoFocus 
+                        fullWidth
+                        onChange={(e)=>this.setState({dataEntrega: e.target.value})}/>
+                  </Box>
+                  <Box m={4}>  
+                      <TextField 
+                        type="text" 
+                        placeholder="Ponto de Partida" 
+                        value={this.state.pontoPartida} 
+                        autoFocus 
+                        fullWidth
+                        onChange={(e)=>this.setState({pontoPartida: e.target.value})}/>
+                  </Box>      
+                  <Box m={4}>  
+                      <TextField 
+                        type="text" 
+                        placeholder="Destino" 
+                        value={this.state.pontoDestino} 
+                        autoFocus 
+                        fullWidth
+                        onChange={(e)=>this.setState({pontoDestino: e.target.value})}/>
+                  </Box>
+                  <Box mx="auto" p={3}>     
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                    >
+                    CADASTRAR
+                    </Button>                
+                    <Link to  ='/cadastros' style={{ textDecoration: 'none', color: 'white' }} >
+                      <Button
+                        margin="2dp"
+                        variant="contained"
+                        color="secondary"
+                      >
+                          Lista de Cadastros    
+                      </Button>
+                    </Link>
+                  </Box>  
         </form>
     </Container>
     );
