@@ -8,25 +8,25 @@ import Box from '@material-ui/core/Box';
 const containerForm = {
     textAlign:'center',
     backgroundColor: 'white',
+    marginTop:50
 }
 
 export default class PostForm extends Component{
-    
-    
-    constructor(props){
-        super(props);
-        this.state = {
-          nome: '',
-          dataEntrega: '',
-          pontoPartida: '',
-          pontoDestino: ''
-        }
-        this.cadastrar = this.cadastrar.bind(this);
-      }
- 
-     cadastrar = (e) => {
-        e.preventDefault();
-        fetch('http://localhost:8080/cadastrar', {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      nome: '',
+      dataEntrega: '',
+      pontoPartida: '',
+      pontoDestino: ''
+    }
+    this.cadastrar = this.cadastrar.bind(this);
+  }
+  
+  cadastrar = (e) => {
+     e.preventDefault();
+     fetch('http://localhost:8080/cadastrar', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -36,18 +36,18 @@ export default class PostForm extends Component{
           pontoDestino: this.state.pontoDestino
         })
           }).then( response => response.json()).then(data => {
-        if (data){
-            alert('enviado com sucesso');
-             console.log('enviado com sucesso');
+            if (data){
+              alert('enviado com sucesso');
+              console.log('enviado com sucesso');
             }
           })
         }
-           
+     
+         
  render(){
     return (
     <Container component="main" maxWidth="sm">
         <form onSubmit={this.cadastrar} style={containerForm}>
-          <span style={{color:'red'}}>{this.state.alerta}</span><br></br>
               <label>Cadastrar encomendas</label><br/>
                   <Box m={4}>  
                       <TextField 
@@ -93,7 +93,7 @@ export default class PostForm extends Component{
                     >
                     CADASTRAR
                     </Button>                
-                    <Link to  ='/cadastros' style={{ textDecoration: 'none', color: 'white' }} >
+                    &nbsp;&nbsp;<Link to  ='/cadastros' style={{ textDecoration: 'none', color: 'white' }} >
                       <Button
                         margin="2dp"
                         variant="contained"
