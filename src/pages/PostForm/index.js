@@ -26,9 +26,12 @@ export default class PostForm extends Component{
   
   cadastrar = (e) => {
      e.preventDefault();
-     fetch('http://deliveries-front.herokuapp.com/cadastrar', {
+     fetch('http://deliveries-front.herokuapp.com/cadastrar/', {
         method: 'post',
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           nome: this.state.nome,
           dataEntrega: this.state.dataEntrega,
