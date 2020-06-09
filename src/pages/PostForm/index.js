@@ -61,6 +61,7 @@ export default class PostForm extends Component{
                         value={this.state.nome} 
                         autoFocus 
                         fullWidth
+                        required
                         onChange={(e)=>this.setState({nome: e.target.value})}/>
                   </Box>
                   <Box m={4}>  
@@ -70,6 +71,7 @@ export default class PostForm extends Component{
                         value={this.state.dataEntrega} 
                         autoFocus 
                         fullWidth
+                        required
                         onChange={(e)=>this.setState({dataEntrega: e.target.value})}/>
                   </Box>
                   <Box m={4}>  
@@ -79,6 +81,7 @@ export default class PostForm extends Component{
                         value={this.state.pontoPartida} 
                         autoFocus 
                         fullWidth
+                        required
                         onChange={(e)=>this.setState({pontoPartida: e.target.value})}/>
                   </Box>      
                   <Box m={4}>  
@@ -88,6 +91,7 @@ export default class PostForm extends Component{
                         value={this.state.pontoDestino} 
                         autoFocus 
                         fullWidth
+                        required
                         onChange={(e)=>this.setState({pontoDestino: e.target.value})}/>
                   </Box>
                   <Box mx="auto" p={3}>     
