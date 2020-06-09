@@ -13,7 +13,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 const styles = {
   root: {
     maxWidth: 100,
-
   },
 }
 
@@ -54,8 +53,7 @@ class Cadastros extends Component {
 
   render(){ 
 
-    const { dados } = this.state
-    //const { classes } = this.props;
+    const { dados } = this.state;
 
     return (
 
