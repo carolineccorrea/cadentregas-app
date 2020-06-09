@@ -26,7 +26,7 @@ export default class PostForm extends Component{
   
   cadastrar = (e) => {
      e.preventDefault();
-     fetch('http://deliveries-front.herokuapp.com/cadastrar/', {
+     fetch('https://api-deliveries.herokuapp.com/cadastrar', {
         method: 'post',
         headers: {
           'Accept': 'application/json',
@@ -42,6 +42,8 @@ export default class PostForm extends Component{
             if (data){
               alert('enviado com sucesso');
               console.log('enviado com sucesso');
+            } else {
+              alert('erro ao cadastrar');
             }
           })
         }

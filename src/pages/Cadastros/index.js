@@ -40,7 +40,8 @@ class Cadastros extends Component {
 
   deletar = (id) => {
     if(window.confirm('tem certeza que deseja deletar?')){
-      fetch('http://deliveries-front.herokuapp.com/cadastrar/'+id, {
+      fetch('http://api-deliveries.herokuapp.com/cadastrar/'+id, {
+        mode: 'cors',
         method: 'delete',
         headers: {'Accept': 'application/json',
         'Content-Type': 'application/json'},
