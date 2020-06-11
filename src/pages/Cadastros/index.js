@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Circular } from 'styled-loaders-react';
 
 import api from '../../api';
 import {
@@ -21,21 +22,27 @@ class Cadastros extends Component {
     super(props);
       this.state = {
       dados: [],
+      loading: true
     }
     this.carregar = this.carregar.bind(this);
   }
   async componentDidMount(){
+    /*
     const response = await api.get('/cadastrar');
     this.setState({dados: response.data})
     console.log(response.data);
+    */ 
+  // this.state.loading = true;
+   if(this.state.loading){
+    this.carregar();
+    this.state.loading = false;
+   }
   }
 
   async carregar() {
     const response = await api.get('/cadastrar');
     this.setState({dados: response.data})
     console.log(response.data);
-
-
   };
 
   deletar = (id) => {
@@ -57,7 +64,9 @@ class Cadastros extends Component {
     const { dados } = this.state;
 
     return (
-
+      <div>
+      { this.state.loading ?
+          <Circular/> :
     <Container>
        {dados.map(dado => (
        <Card className="styles.root"
@@ -73,6 +82,8 @@ class Cadastros extends Component {
       </Card>
         ))}
     </Container>
+    }
+    </div>
    );
  } 
 }
