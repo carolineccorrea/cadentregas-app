@@ -8,9 +8,6 @@
     display:flex;
     flex-direction: column;
     background-color:#0099ff;
-    border:1px solid black;
-    border-radius: 5px;
-    padding: 15px;
     cursor: pointer;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
@@ -21,3 +18,22 @@
   .btn-cad:hover{
     transform: scale(1.05);
   }
+
+  .btn-list{
+    display:flex;
+    flex-direction: column;
+    background-color:#0099ff;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+
+  .btn-list:hover{
+    transform: scale(1.05);
+  }
+
+.link{
+    text-decoration: none;
+}

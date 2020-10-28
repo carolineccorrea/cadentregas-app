@@ -99,7 +99,7 @@ export default class PostForm extends Component{
                     >
                     CADASTRAR
                     </Button>                
-                    &nbsp;&nbsp;<Link to  ='/cadastros' style={{ textDecoration: 'none', color: 'white' }} >
+                    &nbsp;&nbsp;<Link to  ='/cadastros' className="link" >
                       <Button
                         margin="2dp"
                         variant="contained"
