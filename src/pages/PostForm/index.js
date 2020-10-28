@@ -6,11 +6,6 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import "./style.css";
 
-const containerForm = {
-    textAlign:'center',
-    backgroundColor: 'white',
-    marginTop:50
-}
 
 export default class PostForm extends Component{
 
@@ -100,6 +95,7 @@ export default class PostForm extends Component{
                       type="submit"
                       variant="contained"
                       color="primary"
+                      className="btn-cad"
                     >
                     CADASTRAR
                     </Button>                
@@ -108,6 +104,7 @@ export default class PostForm extends Component{
                         margin="2dp"
                         variant="contained"
                         color="secondary"
+                        className="btn-cad"
                       >
                           Lista de Cadastros    
                       </Button>

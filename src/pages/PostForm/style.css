@@ -1,5 +1,23 @@
 .container-form{
     text-align: center;
-    background-color: aliceblue;
-    margin-top: 50px;
+    background-color:white;
+    margin: 50px;
 }
+
+.btn-cad{
+    display:flex;
+    flex-direction: column;
+    background-color:#0099ff;
+    border:1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+
+}
+  .btn-cad:hover{
+    transform: scale(1.05);
+  }
