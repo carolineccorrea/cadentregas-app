@@ -4,6 +4,7 @@ import { TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import "./style.css";
 
 const containerForm = {
     textAlign:'center',
@@ -52,7 +53,7 @@ export default class PostForm extends Component{
  render(){
     return (
     <Container component="main" maxWidth="sm">
-        <form onSubmit={this.cadastrar} style={containerForm}>
+        <form onSubmit={this.cadastrar} className="container-form">
               <label>Cadastrar encomendas</label><br/>
                   <Box m={4}>  
                       <TextField 
